@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Drill Master</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --bg: #0f0a04;
+    --surface: #1a1108;
+    --border: rgba(255,160,0,0.15);
+    --accent: #FF8C00;
+    --accent2: #FFD700;
+    --text: #e8dcc8;
+    --muted: #8a7a60;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* Background texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(255,140,0,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(255,100,0,0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .app-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #FF8C00, #CC4400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 24px rgba(255,140,0,0.3);
+  }
+
+  .header-text h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--accent2);
+    letter-spacing: -0.02em;
+  }
+
+  .header-text p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* Page title */
+  .page-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+
+  .page-subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Highlight box */
+  .highlight {
+    background: rgba(255,140,0,0.08);
+    border: 1px solid rgba(255,140,0,0.2);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    font-size: 15px;
+    color: var(--accent2);
+  }
+
+  .highlight strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 40px;
+  }
+
+  .section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section h2::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .section p {
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .section ul {
+    list-style: none;
+    margin: 12px 0;
+  }
+
+  .section ul li {
+    font-size: 15px;
+    color: var(--text);
+    padding: 6px 0 6px 20px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section ul li:last-child { border-bottom: none; }
+
+  .section ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 13px;
+  }
+
+  /* Contact */
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 48px;
+  }
+
+  .contact-box h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--accent2);
+    margin-bottom: 12px;
+  }
+
+  .contact-box a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .contact-box a:hover { text-decoration: underline; }
+
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  /* Italian section */
+  .lang-section {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+  }
+
+  .lang-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .lang-badge.it { background: rgba(0,140,255,0.15); color: #4AA8FF; border: 1px solid rgba(0,140,255,0.2); }
+  .lang-badge.en { background: rgba(255,140,0,0.15); color: var(--accent); border: 1px solid rgba(255,140,0,0.2); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="app-icon">⛏</div>
+    <div class="header-text">
+      <h1>Drill Master</h1>
+      <p>by [Il tuo nome] · App Store</p>
+    </div>
+  </div>
+
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-subtitle">Last updated: March 2026 · Ultimo aggiornamento: Marzo 2026</p>
+
+  <!-- Key message -->
+  <div class="highlight">
+    <strong>⛏ The short version / La versione breve</strong>
+    Drill Master does not collect, store or share any personal data. The app works fully offline. No account required. No tracking.
+    <br><br>
+    Drill Master non raccoglie, conserva o condivide alcun dato personale. L'app funziona completamente offline. Nessun account richiesto. Nessun tracciamento.
+  </div>
+
+  <!-- ENGLISH -->
+  <div class="lang-section">
+    <span class="lang-badge en">🇬🇧 English</span>
+
+    <div class="section">
+      <h2>Information We Collect</h2>
+      <p>Drill Master does not collect any personal information. Specifically, we do not collect:</p>
+      <ul>
+        <li>Name, email address or any contact information</li>
+        <li>Location data</li>
+        <li>Device identifiers or advertising IDs</li>
+        <li>Usage data or analytics</li>
+        <li>Payment information (the app has no in-app purchases)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Internet Connection</h2>
+      <p>Drill Master works entirely offline. The app does not require an internet connection and does not transmit any data over the network.</p>
+    </div>
+
+    <div class="section">
+      <h2>Children's Privacy</h2>
+      <p>Drill Master is suitable for all ages, including children under 13. Since we collect no personal information from anyone, we are fully compliant with the Children's Online Privacy Protection Act (COPPA) and similar regulations worldwide.</p>
+    </div>
+
+    <div class="section">
+      <h2>Data Storage</h2>
+      <p>Game progress (level, credits, upgrades) is saved locally on your device only. This data never leaves your device and is deleted if you uninstall the app.</p>
+    </div>
+
+    <div class="section">
+      <h2>Third-Party Services</h2>
+      <p>Drill Master does not use any third-party SDKs, analytics tools, advertising networks or social media integrations.</p>
+    </div>
+
+    <div class="section">
+      <h2>Changes to This Policy</h2>
+      <p>If we update this privacy policy, we will post the new version on this page. We encourage you to review this page periodically.</p>
+    </div>
+  </div>
+
+  <!-- ITALIANO -->
+  <div class="lang-section">
+    <span class="lang-badge it">🇮🇹 Italiano</span>
+
+    <div class="section">
+      <h2>Informazioni Raccolte</h2>
+      <p>Drill Master non raccoglie alcuna informazione personale. In particolare, non raccogliamo:</p>
+      <ul>
+        <li>Nome, indirizzo email o qualsiasi informazione di contatto</li>
+        <li>Dati di geolocalizzazione</li>
+        <li>Identificatori del dispositivo o ID pubblicitari</li>
+        <li>Dati di utilizzo o analytics</li>
+        <li>Informazioni di pagamento (l'app non ha acquisti in-app)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Connessione Internet</h2>
+      <p>Drill Master funziona completamente offline. L'app non richiede connessione internet e non trasmette alcun dato in rete.</p>
+    </div>
+
+    <div class="section">
+      <h2>Privacy dei Minori</h2>
+      <p>Drill Master è adatta a tutte le età, inclusi i bambini sotto i 13 anni. Non raccogliendo alcuna informazione personale, siamo pienamente conformi al COPPA (Children's Online Privacy Protection Act) e alle normative equivalenti in vigore in Europa e nel resto del mondo.</p>
+    </div>
+
+    <div class="section">
+      <h2>Salvataggio Dati</h2>
+      <p>I progressi di gioco (livello, crediti, potenziamenti) vengono salvati esclusivamente sul tuo dispositivo. Questi dati non lasciano mai il tuo dispositivo e vengono eliminati se disinstalli l'app.</p>
+    </div>
+
+    <div class="section">
+      <h2>Servizi di Terze Parti</h2>
+      <p>Drill Master non utilizza SDK di terze parti, strumenti di analisi, reti pubblicitarie o integrazioni con social media.</p>
+    </div>
+
+    <div class="section">
+      <h2>Modifiche a questa Policy</h2>
+      <p>In caso di aggiornamenti alla presente informativa, pubblicheremo la nuova versione su questa pagina. Ti invitiamo a consultarla periodicamente.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-box">
+    <h3>Contact / Contatti</h3>
+    <p style="font-size:15px; color: var(--text); margin-bottom: 8px;">
+      For any questions about this privacy policy, please contact:<br>
+      Per qualsiasi domanda su questa informativa, contattaci:
+    </p>
+    <p style="font-size:15px;">
+      📧 <a href="mailto:[TUA EMAIL]">[TUA EMAIL]</a>
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>© 2026 [Il tuo nome]. All rights reserved.</span>
+    <span>Drill Master · App Store</span>
+  </div>
+
+</div>
+</body>
+</html>
